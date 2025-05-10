@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { NavLink } from "src/components/NavLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <main className="box">
+          <nav>
+            <NavLink href="/">home</NavLink>
+            <NavLink href="/useActionStatePage">useActionStatePage</NavLink>
+          </nav>
+          <article
+            className="p-4 bg-gray-100 rounded-md shadow-md"
+            style={{ minHeight: "calc(100vh - 4rem)" }}
+          >
+            {children}
+          </article>
+        </main>
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ export default function UseActionStatePage() {
   const [user, submitAction, isPending] = useActionState(
     fetchUser2,
     "initial value",
-    "permalink/123"
+    "https://github.com/bubucuo/next-apple"
   );
 
   return (
